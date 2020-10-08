@@ -3,11 +3,11 @@ import datetime
 os.system('cls')
 
 #VARIABLES NO RELEVANTES
-nombre_clt = input("Ingrese su nombre: ")
-apelli_clt = input("Ingrese su apellido: ")
+nombre_clt = input("Ingrese su nombre: ").capitalize()
+apelli_clt = input("Ingrese su apellido: ").capitalize()
 rut_clt = int(input("Ingrese su rut (sin guion, ni puntos, si temina con k, reemplazelo con un 0): "))
 marca_aut = input("Ingrese la marca de su vehículo: ").upper()
-model_aut = input("Ingrese el modelo de su vehículo: ")
+model_aut = input("Ingrese el modelo de su vehículo: ").capitalize()
 
 rev_km = input("Desea que se realize la Revision 1000KM (2 Hrs): ").upper()
 
@@ -103,11 +103,13 @@ if estado_salida == True:
 else:
     print("")
 
+
+print("Seleccione lo que desea hacer: ")
+print("(1) Consultar por el estado del servicio ")
+accion = int(input("--->>> "))
+
 reint_consulta = "SI"
 while reint_consulta == "SI":
-    print("Seleccione lo que desea hacer: ")
-    print("(1) Consultar por el estado del servicio ")
-    accion = int(input("--->>> "))
     if accion == 1:
         hr_pregunta_si_esta_listo = datetime.datetime.now()
 
