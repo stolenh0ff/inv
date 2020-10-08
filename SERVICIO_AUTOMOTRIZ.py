@@ -39,34 +39,34 @@ elif rev_km == "NO":
 if cam_aceite == "SI":
     tiempo_total = tiempo_total + 60
     cant_serv = cant_serv + 1
-    rev_frenos = input("Desea que se realize la Revision a los Frenos (0,5 Hrs): ").upper()
+    rev_frenos = input("Desea que se realize la Revision a los Frenos (30 Minutos): ").upper()
     servicios = servicios + "Cambio de Aceite | "
 elif cam_aceite == "NO":
-    rev_frenos = input("Desea que se realize la Revision a los Frenos (0,5 Hrs): ").upper()
+    rev_frenos = input("Desea que se realize la Revision a los Frenos (30 Minutos): ").upper()
 
 if rev_frenos == "SI":
     tiempo_total = tiempo_total + 30
     cant_serv = cant_serv + 1
-    rev_correas = input("Desea que se realize la Revision a las Correas (0,5 Hrs): ").upper()
+    rev_correas = input("Desea que se realize la Revision a las Correas (30 Minutos): ").upper()
     servicios = servicios + "Revision de frenos | "
 elif rev_frenos == "NO": 
-    rev_correas = input("Desea que se realize la Revision a las Correas (0,5 Hrs): ").upper()
+    rev_correas = input("Desea que se realize la Revision a las Correas (30 Minutos): ").upper()
 
 if rev_correas == "SI":
     tiempo_total = tiempo_total + 30
     cant_serv = cant_serv + 1
-    rev_luces = input("Desea que se realize la Revision de las Luces (0,2 Hrs): ").upper()
+    rev_luces = input("Desea que se realize la Revision de las Luces (12 Minutos): ").upper()
     servicios = servicios + "Revision Correas | "
 elif rev_correas == "NO":
-    rev_luces = input("Desea que se realize la Revision de las Luces (0,2 Hrs): ").upper()
+    rev_luces = input("Desea que se realize la Revision de las Luces (12 Minutos): ").upper()
 
 if rev_luces == "SI":
     tiempo_total = tiempo_total + 12
     cant_serv = cant_serv + 1
-    rev_direc = input("Desea que se realize la Revision a la Dirección (0,5 Hrs): ").upper()
+    rev_direc = input("Desea que se realize la Revision a la Dirección (30 Minutos): ").upper()
     servicios = servicios + "Revision de luces | "
 elif rev_luces == "NO":
-    rev_direc = input("Desea que se realize la Revision a la Dirección (0,5 Hrs): ").upper()
+    rev_direc = input("Desea que se realize la Revision a la Dirección (30 Minutos): ").upper()
 
 if rev_direc == "SI":
     tiempo_total = tiempo_total + 30
