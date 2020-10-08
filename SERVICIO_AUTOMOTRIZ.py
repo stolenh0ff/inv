@@ -103,7 +103,6 @@ if estado_salida == True:
 else:
     print("")
 
-
 print("Seleccione lo que desea hacer: ")
 print("(1) Consultar por el estado del servicio ")
 accion = int(input("--->>> "))
@@ -118,7 +117,6 @@ while reint_consulta == "SI":
             print(f"El auto se entregará en {tiempo_total} Minutos más, a las {hora_termina_servicio_formateada} hrs")
         if hr_pregunta_si_esta_listo == hora_termina_servicio:
             print("El auto está en estado 'terminado'")
-
         if hr_pregunta_si_esta_listo > hora_termina_servicio:
             print("El auto está en estado 'entregado'")
     reint_consulta = input("¿Desea volver a consultar? (SI/NO): ").upper()
