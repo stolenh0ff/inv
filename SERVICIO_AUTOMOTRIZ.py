@@ -1,5 +1,5 @@
 import os
-from random import randint
+import datetime
 os.system('cls')
 
 #VARIABLES NO RELEVANTES
@@ -11,17 +11,12 @@ model_aut = input("Ingrese el modelo de su vehículo: ")
 
 rev_km = input("Desea que se realize la Revision 1000KM (2 Hrs): ").upper()
 
-#SERVICIOS SOLICITADOS
-
-#SERVICIO OPCIONAL
-#Lavado de auto
-
 #VAR
 separador = ("--------------------------------------------------------")
 tiempo_total = 0
 cant_serv = 0
 estado_salida = False
-estado_s = ["Trabajando", "Terminado", "Entregado"]
+formato_fecha = "%d/%m/%Y %H:%M"
 
 servicios = ""
 
@@ -84,6 +79,16 @@ if lavar_auto == "SI":
 elif lavar_auto == "NO":
     estado_salida = True
 
+#Variables del DATETIME
+
+hr_entrega_llaves = datetime.datetime.now()
+hr_entrega_llaves_formateada = hr_entrega_llaves.strftime(formato_fecha)
+print(f"Hora de entrega de las llaves al servicio mecánico = {hr_entrega_llaves_formateada}")
+
+hora_termina_servicio = hr_entrega_llaves + datetime.timedelta(minutes=tiempo_total)
+
+hora_termina_servicio_formateada = hora_termina_servicio.strftime(formato_fecha)
+
 if estado_salida == True:
     print(separador)
     print("SERVICIO AUTOMOTRIZ")
@@ -93,7 +98,26 @@ if estado_salida == True:
     print("Servicios: " , servicios)
     print("Cantidad de servicios: " , cant_serv)
     print("Tiempo de espera: " , tiempo_total, "Minutos")
-    print("Estado de los servicios: " , estado_s[randint(0,2)])
+    print("Estado de los servicios: Inicializando")
     print(separador)
 else:
     print("")
+
+reint_consulta = "SI"
+while reint_consulta == "SI":
+    print("Seleccione lo que desea hacer: ")
+    print("(1) Consultar por el estado del servicio ")
+    accion = int(input("--->>> "))
+    if accion == 1:
+        hr_pregunta_si_esta_listo = datetime.datetime.now()
+
+        if hr_entrega_llaves <= hr_pregunta_si_esta_listo < hora_termina_servicio:
+            print("El auto está en estado 'trabajando'")
+            print(f"El auto se entregará en {tiempo_total} Minutos más, a las {hora_termina_servicio_formateada} hrs")
+        if hr_pregunta_si_esta_listo == hora_termina_servicio:
+            print("El auto está en estado 'terminado'")
+
+        if hr_pregunta_si_esta_listo > hora_termina_servicio:
+            print("El auto está en estado 'entregado'")
+    reint_consulta = input("¿Desea volver a consultar? (SI/NO): ").upper()
+#BenjaminSepulveda
