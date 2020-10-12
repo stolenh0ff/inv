@@ -16,7 +16,7 @@ separador = ("--------------------------------------------------------")
 tiempo_total = 0
 cant_serv = 0
 estado_salida = False
-formato_fecha = "%d/%m/%Y %H:%M"
+formato_fecha = "%H:%M Hrs %d/%m/%Y"
 
 servicios = ""
 
@@ -26,50 +26,50 @@ cant_serv = 0
 if rev_km == "SI":
     tiempo_total = tiempo_total + 120
     cant_serv = cant_serv + 1
-    cam_aceite = input("Desea que se realize el Cambio de Aceite (1 Hr): ").upper()
+    cam_aceite = input("¿Desea que se realize el Cambio de Aceite (1 Hr)?: ").upper()
     servicios = servicios + "Revision 1000KM | "
 elif rev_km == "NO":
-    cam_aceite = input("Desea que se realize el Cambio de Aceite (1 Hr): ").upper()
+    cam_aceite = input("¿Desea que se realize el Cambio de Aceite (1 Hr)?: ").upper()
 
 if cam_aceite == "SI":
     tiempo_total = tiempo_total + 60
     cant_serv = cant_serv + 1
-    rev_frenos = input("Desea que se realize la Revision a los Frenos (30 Minutos): ").upper()
+    rev_frenos = input("¿Desea que se realize la Revision a los Frenos (30 Minutos)?: ").upper()
     servicios = servicios + "Cambio de Aceite | "
 elif cam_aceite == "NO":
-    rev_frenos = input("Desea que se realize la Revision a los Frenos (30 Minutos): ").upper()
+    rev_frenos = input("¿Desea que se realize la Revision a los Frenos (30 Minutos)?: ").upper()
 
 if rev_frenos == "SI":
     tiempo_total = tiempo_total + 30
     cant_serv = cant_serv + 1
-    rev_correas = input("Desea que se realize la Revision a las Correas (30 Minutos): ").upper()
+    rev_correas = input("¿Desea que se realize la Revision a las Correas (30 Minutos)?: ").upper()
     servicios = servicios + "Revision de frenos | "
 elif rev_frenos == "NO": 
-    rev_correas = input("Desea que se realize la Revision a las Correas (30 Minutos): ").upper()
+    rev_correas = input("¿Desea que se realize la Revision a las Correas (30 Minutos)?: ").upper()
 
 if rev_correas == "SI":
     tiempo_total = tiempo_total + 30
     cant_serv = cant_serv + 1
-    rev_luces = input("Desea que se realize la Revision de las Luces (12 Minutos): ").upper()
+    rev_luces = input("¿Desea que se realize la Revision de las Luces (12 Minutos)?: ").upper()
     servicios = servicios + "Revision Correas | "
 elif rev_correas == "NO":
-    rev_luces = input("Desea que se realize la Revision de las Luces (12 Minutos): ").upper()
+    rev_luces = input("¿Desea que se realize la Revision de las Luces (12 Minutos)?: ").upper()
 
 if rev_luces == "SI":
     tiempo_total = tiempo_total + 12
     cant_serv = cant_serv + 1
-    rev_direc = input("Desea que se realize la Revision a la Dirección (30 Minutos): ").upper()
+    rev_direc = input("¿Desea que se realize la Revision a la Dirección (30 Minutos)?: ").upper()
     servicios = servicios + "Revision de luces | "
 elif rev_luces == "NO":
-    rev_direc = input("Desea que se realize la Revision a la Dirección (30 Minutos): ").upper()
+    rev_direc = input("¿Desea que se realize la Revision a la Dirección (30 Minutos)?: ").upper()
 
 if rev_direc == "SI":
     tiempo_total = tiempo_total + 30
     cant_serv = cant_serv + 1
-    lavar_auto = input("¿Desea el lavado adicional gratuito para el vehiculo? (Se demorará 30 Minutos adicionales): ").upper()
+    lavar_auto = input("¿Desea el lavado adicional gratuito para el vehiculo? (Se demorará 30 Minutos adicionales)?: ").upper()
     servicios = servicios + "Revision de direccion | "
 elif rev_direc == "NO":
-    lavar_auto = input("¿Desea el lavado adicional gratuito para el vehiculo? (Se demorará 30 Minutos adicionales): ").upper()
+    lavar_auto = input("¿Desea el lavado adicional gratuito para el vehiculo? (Se demorará 30 Minutos adicionales)?: ").upper()
 
 if lavar_auto == "SI":
     tiempo_total = tiempo_total + 30
@@ -103,6 +103,7 @@ if estado_salida == True:
 else:
     print("")
 
+
 print("Seleccione lo que desea hacer: ")
 print("(1) Consultar por el estado del servicio ")
 accion = int(input("--->>> "))
@@ -114,9 +115,10 @@ while reint_consulta == "SI":
 
         if hr_entrega_llaves <= hr_pregunta_si_esta_listo < hora_termina_servicio:
             print("El auto está en estado 'trabajando'")
-            print(f"El auto se entregará en {tiempo_total} Minutos más, a las {hora_termina_servicio_formateada} hrs")
+            print(f"El auto se entregará en {tiempo_total} Minutos más, a las {hora_termina_servicio_formateada}")
         if hr_pregunta_si_esta_listo == hora_termina_servicio:
             print("El auto está en estado 'terminado'")
+
         if hr_pregunta_si_esta_listo > hora_termina_servicio:
             print("El auto está en estado 'entregado'")
     reint_consulta = input("¿Desea volver a consultar? (SI/NO): ").upper()
