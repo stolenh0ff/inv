@@ -6,6 +6,7 @@ valor_clp = 1
 
 #Var
 sep = ("------------------------------------------------------")
+intentos = 0
 
 #Valor Dolar
 valor_usd = 801.6
@@ -24,8 +25,14 @@ print("2) Euro")
 print("3) UF")
 print("4) Salir")
 
-operacion_1 = int(input("Seleccione la moneda a operar: "))
-
+operacion_1 = 0
+while (operacion_1 < 1 or operacion_1 > 5) and intentos < 3:
+    intentos = intentos + 1
+    operacion_1 = int(input("Seleccione la moneda a operar: "))
+if intentos == 3:
+    print(sep)
+    print("Ha alcanzado el limite máximo de intentos (3 intentos)")
+    print(sep)
 if operacion_1 == 1:
     print(sep)
     print("Seleccione método de conversión")
@@ -33,6 +40,7 @@ if operacion_1 == 1:
     print("2) Dolar a Peso Chileno (USD a CLP)")
     moneda_A = "Pesos Chilenos"
     moneda_B = "Dólares"
+    operacion_2 = int(input("--->>> "))
 
 if operacion_1 == 2:
     print(sep)
@@ -41,6 +49,7 @@ if operacion_1 == 2:
     print("2) Euro a Peso Chileno (EUR a CLP)")
     moneda_A = "Pesos Chilenos"
     moneda_B = "Euros"
+    operacion_2 = int(input("--->>> "))
 
 if operacion_1 == 3:
     print(sep)
@@ -49,12 +58,12 @@ if operacion_1 == 3:
     print("2) Unidad de Fomento a Peso Chileno (UF a CLP)")
     moneda_A = "Pesos Chilenos"
     moneda_B = "Unidades de Fomento"
+    operacion_2 = int(input("--->>> "))
 
 if operacion_1 == 4:
     print("Presione [ENTER] para confirmar")
     input()
-
-operacion_2 = int(input("--->>> "))
+    operacion_2 = int(input("--->>> "))
 
 if operacion_2 == 1:
     print("Ingresa cantidad de", moneda_A )
@@ -84,3 +93,4 @@ elif operacion_2 == 2:
     v_total = cant_mon_B * valor_m
 
 print("Valor Total: ", v_total, iso_code )
+#BS
