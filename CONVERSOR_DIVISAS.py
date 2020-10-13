@@ -1,15 +1,18 @@
 import os
 os.system("cls")
 
-
-#Valores monedas en clp
-valor_dolar = 801.6
-valor_euro = 875.4
-valor_uf = 28993.7
+#Valor moneda
 valor_clp = 1
 
 #Var
 sep = ("------------------------------------------------------")
+
+#Valor Dolar
+valor_usd = 801.6
+#Valor Euro
+valor_eur = 875.4
+#Valor Unidad de Fomento
+valor_clf = 28993.7
 
 #Operaciones
 #Operacion_1 --->>>Selecciona la moneda de origen
@@ -26,10 +29,10 @@ operacion_1 = int(input("Seleccione la moneda a operar: "))
 if operacion_1 == 1:
     print(sep)
     print("Seleccione método de conversión")
-    print("1) Peso Chileno a Dolar (CLP a USD)")
+    print("1) Peso Chileno a Dólar (CLP a USD)")
     print("2) Dolar a Peso Chileno (USD a CLP)")
     moneda_A = "Pesos Chilenos"
-    moneda_B = "Dolares"
+    moneda_B = "Dólares"
 
 if operacion_1 == 2:
     print(sep)
@@ -48,28 +51,36 @@ if operacion_1 == 3:
     moneda_B = "Unidades de Fomento"
 
 if operacion_1 == 4:
-    exit
+    print("Presione [ENTER] para confirmar")
+    input()
 
 operacion_2 = int(input("--->>> "))
-
 
 if operacion_2 == 1:
     print("Ingresa cantidad de", moneda_A )
     cant_mon_A = float(input("--->>> "))
-if operacion_2 == 2:
+    if operacion_1 ==1: 
+        valor_m = valor_usd
+        iso_code = "USD"
+    if operacion_1 ==2:
+        valor_m = valor_eur
+        iso_code = "EUR"
+    if operacion_1 ==3:
+        valor_m = valor_clf
+        iso_code = "CLF"
+    #Conversion directa (A -->> B)
+    v_total = cant_mon_A / valor_m
+elif operacion_2 == 2:
     print("Ingresa cantidad de", moneda_B )
     cant_mon_B = float(input("--->>> "))
+    if operacion_1 ==1: 
+        valor_m = valor_usd
+    if operacion_1 ==2:
+        valor_m = valor_eur
+    if operacion_1 ==3:
+        valor_m = valor_clf
+    iso_code = "CLP"
+    #Conversion inversa (B -->> A)
+    v_total = cant_mon_B * valor_m
 
-#OPERACION MATEMÁTICA
-
-#Conversion directa
-
-
-
-
-#Conversion inversa
-
-
-
-
-
+print("Valor Total: ", v_total, iso_code )
