@@ -33,6 +33,8 @@ if intentos == 3:
     print(sep)
     print("Ha alcanzado el limite máximo de intentos (3 intentos)")
     print(sep)
+    exit()
+
 if operacion_1 == 1:
     print(sep)
     print("Seleccione método de conversión")
@@ -63,7 +65,7 @@ if operacion_1 == 3:
 if operacion_1 == 4:
     print("Presione [ENTER] para confirmar")
     input()
-    operacion_2 = int(input("--->>> "))
+    exit()
 
 if operacion_2 == 1:
     print("Ingresa cantidad de", moneda_A )
