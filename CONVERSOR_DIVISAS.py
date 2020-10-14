@@ -16,7 +16,7 @@ valor_eur = 875.4
 valor_clf = 28993.7
 
 #Operaciones
-#Operacion_1 --->>>Selecciona la moneda de origen
+#Operacion_1 --->>>Selecciona la moneda de origen [MENU PRINCIPAL]
 #Operacion_2 --->>>Selecciona método de conversión
 
 print("Banco Oeste")
@@ -24,6 +24,10 @@ print("1) Dólares")
 print("2) Euro")
 print("3) UF")
 print("4) Salir")
+
+#(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)
+#(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)
+#(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)
 
 operacion_1 = 0
 while (operacion_1 < 1 or operacion_1 > 4) and intentos < 3:
@@ -34,6 +38,10 @@ if intentos == 3:
     print("Ha alcanzado el limite máximo de intentos (3 intentos)")
     print(sep)
     exit()
+
+#(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)
+#(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)
+#(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)(TESTING)
 
 if operacion_1 == 1:
     print(sep)
@@ -56,8 +64,8 @@ if operacion_1 == 2:
 if operacion_1 == 3:
     print(sep)
     print("Seleccione método de conversión")
-    print("1) Peso Chileno a Unidad de Fomento (CLP a UF)")
-    print("2) Unidad de Fomento a Peso Chileno (UF a CLP)")
+    print("1) Peso Chileno a Unidad de Fomento (CLP a CLF)")
+    print("2) Unidad de Fomento a Peso Chileno (CLF a CLP)")
     moneda_A = "Pesos Chilenos"
     moneda_B = "Unidades de Fomento"
     operacion_2 = int(input("--->>> "))
