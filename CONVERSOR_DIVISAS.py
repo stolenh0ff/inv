@@ -1,9 +1,6 @@
 import os
 os.system("cls")
 
-#Valor moneda
-valor_clp = 1
-
 #Var
 sep = ("------------------------------------------------------")
 intentos = 0
