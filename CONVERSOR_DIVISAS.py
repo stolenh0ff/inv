@@ -26,7 +26,7 @@ print("3) UF")
 print("4) Salir")
 
 operacion_1 = 0
-while (operacion_1 < 1 or operacion_1 > 5) and intentos < 3:
+while (operacion_1 < 1 or operacion_1 > 4) and intentos < 3:
     intentos = intentos + 1
     operacion_1 = int(input("Seleccione la moneda a operar: "))
 if intentos == 3:
